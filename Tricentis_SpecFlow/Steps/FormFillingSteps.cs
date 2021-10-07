@@ -33,7 +33,7 @@ namespace Tricentis_SpecFlow.Steps
             EVD.NumberofSeats("2");
             EVD.RHDrive();
             EVD.FuelType("Electric Power");
-            EVD.Payload("700");
+            EVD.Payload("1000");
             EVD.Totalweight("1000");
             EVD.ListPrice("100000");
             EVD.LPNumber("MH12");
