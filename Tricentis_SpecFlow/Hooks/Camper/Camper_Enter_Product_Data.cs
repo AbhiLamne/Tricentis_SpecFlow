@@ -20,7 +20,7 @@ namespace Tricentis.Pages
         By enterStartDate_Month = By.XPath("//div[@class='ui-datepicker-title']/span[@class='ui-datepicker-month']");
         By enterStartDate_Year = By.XPath("//div[@class='ui-datepicker-title']/span[@class='ui-datepicker-year']");
         By nextBtn = By.XPath("//a[@title='Next']");
-        By date = By.XPath("//a[@class='ui-state-default']");
+        //By date = By.XPath("//a[@class='ui-state-default']");
 
         By Isum = By.Id("insurancesum");
         By DInsurance = By.Id("damageinsurance");
@@ -53,7 +53,7 @@ namespace Tricentis.Pages
             }
 
             //Date
-            dr.FindElement(date).Click();
+            dr.FindElement(By.XPath("//a[text()=" + day + "]")).Click();
         }
     
         public void InsuranceSum(string name)

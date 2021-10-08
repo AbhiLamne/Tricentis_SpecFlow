@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
 
 namespace Tricentis.Pages
 {
@@ -50,6 +51,8 @@ namespace Tricentis.Pages
         public void Send()
         {
             dr.FindElement(send).Click();
+            Thread.Sleep(3000);
         }
+
     }
 }

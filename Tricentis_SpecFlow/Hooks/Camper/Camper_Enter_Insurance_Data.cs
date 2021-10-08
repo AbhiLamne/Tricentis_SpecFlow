@@ -23,7 +23,7 @@ namespace Tricentis.Pages
         By Birth_Month = By.XPath("//div[@class='ui-datepicker-title']/span[@class='ui-datepicker-month']");
         By Birth_Year = By.XPath("//div[@class='ui-datepicker-title']/span[@class='ui-datepicker-year']");
         By previousBtn = By.XPath("//a[@title='Prev']");
-        By Birth_Date = By.XPath("//a[@class='ui-state-default']");
+        //By Birth_Date = By.XPath("//a[@class='ui-state-default']");
 
         By gender = By.XPath("((//span[@class='ideal-radio'])[2])");
         By saddress = By.Id("streetaddress");
@@ -62,13 +62,13 @@ namespace Tricentis.Pages
             }
 
             string actMonth = dr.FindElement(Birth_Month).Text;
-            while (!actYear.Equals(year.ToString()))
+            while (!actMonth.Equals(month.ToString()))
             {
                 dr.FindElement(previousBtn).Click();
                 actMonth = dr.FindElement(Birth_Month).Text;
             }
 
-            dr.FindElement(Birth_Date).Click();
+            dr.FindElement(By.XPath("//a[text()=" + day + "]")).Click();
         }
 
         public void Gender()

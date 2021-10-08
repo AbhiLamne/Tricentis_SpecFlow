@@ -12,24 +12,28 @@ namespace Tricentis_SpecFlow.Steps
     [Binding]
     public class FormFillingSteps
     {
+ 
         private IWebDriver dr;
 
-        [Given(@"I have navigated to Tricentis website")]
-        public void GivenIHaveNavigatedToTricentisWebsite()
+
+        [Given(@"I have navigated to the Tricentis website")]
+        public void GivenIHaveNavigatedToTheTricentisWebsite()
         {
             ApplicationLibrary lib = new ApplicationLibrary();
             dr = lib.LaunchBrowser("Chrome");
-        }
+        }    
+        
+      
 
-        [When(@"I fill all the details in form")]
-        public void WhenIFillAllTheDetailsInForm()
+        [When(@"I fill all the details in the form")]
+        public void WhenIFillAllTheDetailsInTheForm()
         {
 
             Camper_Enter_Vehicle_Data EVD = new Camper_Enter_Vehicle_Data(dr);
             EVD.camper();
             EVD.make("Mercedes Benz");
             EVD.EnginePerformance("500");
-            EVD.EnterDateOfManufacture(1, "August", 2020);
+            EVD.EnterDateOfManufacture(1, "August", 2019);
             EVD.NumberofSeats("2");
             EVD.RHDrive();
             EVD.FuelType("Electric Power");
@@ -45,7 +49,7 @@ namespace Tricentis_SpecFlow.Steps
             Camper_Enter_Insurance_Data EID = new Camper_Enter_Insurance_Data(dr);
             EID.FirstName("Abhishek");
             EID.LastName("Lamne");
-            EID.EnterBirthdate(16, "January", 1994);
+            EID.EnterBirthdate(10, "February", 2002);
             EID.Gender();
             EID.StreetAddress("FC road");
             EID.Country("India");
@@ -59,7 +63,7 @@ namespace Tricentis_SpecFlow.Steps
 
 
             Camper_Enter_Product_Data EPD = new Camper_Enter_Product_Data(dr);
-            EPD.EnterStartDate(16, "January", 2022);
+            EPD.EnterStartDate(31, "January", 2023);
             EPD.InsuranceSum("30000000");
             EPD.DamageInsurance("Full Coverage");
             EPD.OptionalProducts();
@@ -83,11 +87,13 @@ namespace Tricentis_SpecFlow.Steps
 
         }
 
+
         [Then(@"I should get the successful result")]
         public void ThenIShouldGetTheSuccessfulResult()
         {
             Console.WriteLine("Form filling for Camper is successfull");
         }
+
 
     }
 }
