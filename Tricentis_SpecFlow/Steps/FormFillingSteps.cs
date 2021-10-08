@@ -44,8 +44,6 @@ namespace Tricentis_SpecFlow.Steps
             EVD.Milage("4000");
             EVD.Button();
 
-
-
             Camper_Enter_Insurance_Data EID = new Camper_Enter_Insurance_Data(dr);
             EID.FirstName("Abhishek");
             EID.LastName("Lamne");
