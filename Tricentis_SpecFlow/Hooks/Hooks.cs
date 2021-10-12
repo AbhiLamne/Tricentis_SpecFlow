@@ -1,10 +1,8 @@
 ﻿using AventStack.ExtentReports;
-using AventStack.ExtentReports.Gherkin.Model;
 using AventStack.ExtentReports.Reporter;
 using BoDi;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using System.Reflection;
 using TechTalk.SpecFlow;
 
 namespace Tricentis_SpecFlow.Hooks
