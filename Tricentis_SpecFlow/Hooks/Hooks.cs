@@ -17,7 +17,7 @@ namespace Tricentis_SpecFlow.Hooks
         private static ExtentReports extent;
         private static ExtentTest featureName;
         private static ExtentTest scenario;
-        private ExtentTest step;
+ 
 
         public Hooks(IObjectContainer objectContainer)
         {
@@ -28,7 +28,7 @@ namespace Tricentis_SpecFlow.Hooks
         [BeforeTestRun]
         public static void InitializeReport()
         {
-            var htmlReporter = new ExtentHtmlReporter(@"C:\Users\Abhishek Lamne\source\repos\Tricentis\Tricentis_SpecFlow\ExtentReport.html");
+            var htmlReporter = new ExtentHtmlReporter(@"C:\Users\Abhishek Lamne\source\repos\Tricentis\Tricentis_SpecFlow\Extent_Report");
             extent = new ExtentReports();
             extent.AttachReporter(htmlReporter);
         }
@@ -48,14 +48,9 @@ namespace Tricentis_SpecFlow.Hooks
             objectContainer.RegisterInstanceAs<IWebDriver>(dr);
 
             scenario = featureName.CreateNode(context.ScenarioInfo.Title);
+           
         }
 
-
-        [BeforeStep]
-        public void BeforeStep()
-        {
-            step = scenario;
-        }
 
 
         [AfterStep]
@@ -64,17 +59,17 @@ namespace Tricentis_SpecFlow.Hooks
    
             if (context.TestError == null)
             {
-                step.Log(Status.Pass, context.StepContext.StepInfo.Text);
+                scenario.Log(Status.Pass, context.StepContext.StepInfo.Text);
                 
             }
             else if (context.TestError != null)
             {
-                step.Log(Status.Fail, context.StepContext.StepInfo.Text);             
+                scenario.Log(Status.Fail, context.StepContext.StepInfo.Text);             
             }
 
             if (context.ScenarioExecutionStatus.ToString() == "StepDefinationPending")
             {
-                step.Log(Status.Skip, context.StepContext.StepInfo.Text);
+                scenario.Log(Status.Skip, context.StepContext.StepInfo.Text);
             }
         }
 
@@ -82,7 +77,7 @@ namespace Tricentis_SpecFlow.Hooks
         [AfterScenario]
         public void AfterScenario()
         {
-            dr.Quit();
+           
         }
 
 

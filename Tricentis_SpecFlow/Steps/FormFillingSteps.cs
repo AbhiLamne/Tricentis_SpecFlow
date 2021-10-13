@@ -2,16 +2,19 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using System;
+using System.Collections.Generic;
 using System.Threading;
 using TechTalk.SpecFlow;
-
+using TechTalk.SpecFlow.Assist;
 
 namespace Tricentis_SpecFlow.Steps
 {
     [Binding]
     public class FormFillingSteps 
     {
+
         private IWebDriver dr;
+
         public FormFillingSteps(IWebDriver dr)
         {
             this.dr = dr;
@@ -399,47 +402,40 @@ namespace Tricentis_SpecFlow.Steps
         }
 
 
-        [When(@"I enter a data for E-Mail field as (.*)")]
-        public void WhenIEnterADataForE_MailFieldAs(string a)
+        //[When(@"I enter data for user details as (.*), (.*), (.*), (.*) and (.*)")]
+        //public void WhenIEnterDataForUserDetailsAs(string Email, string Phone, string Username, string Password, string ConfPassword)
+        //{
+        //    dr.FindElement(By.Id("email")).SendKeys(Email);
+        //    dr.FindElement(By.Id("phone")).SendKeys(Phone);
+        //    dr.FindElement(By.Id("username")).SendKeys(Username);
+        //    dr.FindElement(By.Id("password")).SendKeys(Password);
+        //    dr.FindElement(By.Id("confirmpassword")).SendKeys(ConfPassword);
+        //}
+
+
+        [When(@"I enter data for user details from table")]
+        public void WhenIEnterDataForUserDetailsFromTable(Table table)
         {
-            By email = By.Id("email");
-            dr.FindElement(email).SendKeys(a);
+            var data = table.CreateDynamicSet();
+            foreach (var details in data)
+            {
+                dr.FindElement(By.Id("email")).SendKeys(details.Email);
+                dr.FindElement(By.Id("phone")).SendKeys(""+details.Phone);
+                dr.FindElement(By.Id("username")).SendKeys(details.Username);
+                dr.FindElement(By.Id("password")).SendKeys(details.Password);
+                dr.FindElement(By.Id("confirmpassword")).SendKeys(details.ConfirmPassword);
+                dr.FindElement(By.Id("Comments")).SendKeys(details.Comments);
+            }
         }
 
-        [When(@"I enter a data for Phone field as (.*)")]
-        public void WhenIEnterADataForPhoneFieldAs(string a)
-        {
-            By phone = By.Id("phone");
-            dr.FindElement(phone).SendKeys(a);
-        }
 
-        [When(@"I enter a data for Username field as (.*)")]
-        public void WhenIEnterADataForUsernameFieldAs(string a)
-        {
-            By username = By.Id("username");
-            dr.FindElement(username).SendKeys(a);
-        }
 
-        [When(@"I enter a data for Password field as (.*)")]
-        public void WhenIEnterADataForPasswordFieldAs(string a)
-        {
-            By password = By.Id("password");
-            dr.FindElement(password).SendKeys(a);
-        }
-
-        [When(@"I enter a data for Confirm Password field as (.*)")]
-        public void WhenIEnterADataForConfirmPasswordFieldAs(string a)
-        {
-            By confpass = By.Id("confirmpassword");
-            dr.FindElement(confpass).SendKeys(a);
-        }
-
-        [When(@"I enter a data for Comments field as (.*)")]
-        public void WhenIEnterADataForCommentsFieldAs(string a)
-        {
-            By comments = By.Id("Comments");
-            dr.FindElement(comments).SendKeys(a);
-        }
+        //[When(@"I enter a data for Comments field as (.*)")]
+        //public void WhenIEnterADataForCommentsFieldAs(string a)
+        //{
+        //    By comments = By.Id("Comments");
+        //    dr.FindElement(comments).SendKeys(a);
+        //}
 
         [When(@"I click on Next Button5")]
         public void WhenIClickOnNextButton5()
@@ -453,7 +449,7 @@ namespace Tricentis_SpecFlow.Steps
         public void ThenISeeSendingE_MailSuccess()
         {
             Console.WriteLine("Sending e-mail successful");
-        }
+        }      
 
     }
 }
