@@ -75,11 +75,11 @@ namespace Tricentis_SpecFlow.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Open Tricentis website and fill up the form for Camper")]
-        [NUnit.Framework.CategoryAttribute("Chrome")]
+        [NUnit.Framework.CategoryAttribute("tag1")]
         public virtual void OpenTricentisWebsiteAndFillUpTheFormForCamper()
         {
             string[] tagsOfScenario = new string[] {
-                    "Chrome"};
+                    "tag1"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Open Tricentis website and fill up the form for Camper", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 5
@@ -102,180 +102,118 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("(1) Open Tricentis website")]
-        public virtual void _1OpenTricentisWebsite()
-        {
-            string[] tagsOfScenario = ((string[])(null));
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("(1) Open Tricentis website", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 6
-this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 7
  testRunner.Given("I have navigated to the Tricentis website", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 8
+#line 7
  testRunner.When("I clicked on Camper", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 9
+#line 8
  testRunner.Then("I see Enter Vehicle Data page is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 10
+#line 9
  testRunner.When("I select a data from dropdown for Make field as Audi", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 11
+#line 10
  testRunner.When("I select a data from dropdown for Engine Performance field as 1000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 12
+#line 11
  testRunner.When("I select a date for Date Of Manufacture field as 10 April 2018", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 13
+#line 12
  testRunner.When("I select a data from dropdown for Number of Seats field as 9", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 14
+#line 13
  testRunner.When("I click on Radio Button for Right Hand Drive field as \'Yes\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 15
+#line 14
  testRunner.When("I select a data from dropdown for Fuel Type field as Gas", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 16
+#line 15
  testRunner.When("I enter a data for Payload field as 800", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 17
+#line 16
  testRunner.When("I enter a data for Total Weight field as 1000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 18
+#line 17
  testRunner.When("I enter a data for List Price field as 100000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 19
+#line 18
  testRunner.When("I enter a data for License Plate Number field as MH12", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 20
+#line 19
  testRunner.When("I enter a data for Annual Mileage field as 4000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 21
+#line 20
  testRunner.When("I click on Next Button1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 22
+#line 21
  testRunner.Then("I see the Enter Insurance Data page is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("(2) Fill-up the data for Enter Product Data page")]
-        public virtual void _2Fill_UpTheDataForEnterProductDataPage()
-        {
-            string[] tagsOfScenario = ((string[])(null));
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("(2) Fill-up the data for Enter Product Data page", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 24
-this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            bool isScenarioIgnored = default(bool);
-            bool isFeatureIgnored = default(bool);
-            if ((tagsOfScenario != null))
-            {
-                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((this._featureTags != null))
-            {
-                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
-            }
-            if ((isScenarioIgnored || isFeatureIgnored))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 25
  testRunner.When("I enter a data for First Name field as John", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 26
+#line 25
  testRunner.When("I enter a data for Last Name field as Smith", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 27
+#line 26
  testRunner.When("I select a date for Date of Birth field as 31 January 2003", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 28
+#line 27
  testRunner.When("I click on Radio Button for Gender as \'Female\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 29
+#line 28
  testRunner.When("I enter a data for Street Address field as FC road", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 30
+#line 29
  testRunner.When("I select a data from dropdown for Country field as Austria", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 31
+#line 30
  testRunner.When("I enter a data for Zip code field as 411038", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 32
+#line 31
  testRunner.When("I enter a data for City field as Pune", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 33
+#line 32
  testRunner.When("I select a data from dropdown for Occupation field as Farmer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 34
+#line 33
  testRunner.When("I click on checkbox for Hobbies field as \'BungeeJumping\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 35
+#line 34
  testRunner.When("I enter a data for Website field as www.amazon.com", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 37
+#line 36
  testRunner.When("I click on Next Button2", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 38
+#line 37
  testRunner.Then("I see the Enter Product Data page is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 40
+#line 39
  testRunner.When("I select a date for Start Date field as 14 February 2023", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 41
+#line 40
  testRunner.When("I select a data for Insurance Sum as 15000000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 42
+#line 41
  testRunner.When("I select a data for Damage Insurance as No Coverage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 43
+#line 42
  testRunner.When("I click on checkbox for Optional Products field as \'LegalDefenseInsurance\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 44
+#line 43
  testRunner.When("I click on Next Button3", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 45
+#line 44
  testRunner.Then("I see the Select Price Option page is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 47
+#line 46
  testRunner.When("I click on Radio Button for Select Option field as \'Gold\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 48
+#line 47
  testRunner.When("I click on Next Button4", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 49
+#line 48
  testRunner.Then("I see the Send Quote page is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
@@ -292,13 +230,13 @@ this.ScenarioInitialize(scenarioInfo);
                             "Abhi@123",
                             "Abhi@123",
                             "Hello!Thank You!"});
-#line 62
+#line 61
  testRunner.When("I enter data for user details from table", ((string)(null)), table1, "When ");
 #line hidden
-#line 65
+#line 64
  testRunner.When("I click on Next Button5", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 66
+#line 65
  testRunner.Then("I see Sending e-mail success", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

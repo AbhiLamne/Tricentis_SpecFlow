@@ -28,7 +28,7 @@ namespace Tricentis_SpecFlow.Hooks
         [BeforeTestRun]
         public static void InitializeReport()
         {
-            var htmlReporter = new ExtentHtmlReporter(@"C:\Users\Abhishek Lamne\source\repos\Tricentis\Tricentis_SpecFlow\Extent_Report");
+            var htmlReporter = new ExtentHtmlReporter(@"C:\Users\Abhishek Lamne\source\repos\Tricentis\Tricentis_SpecFlow\Extent_Report\report.html");
             extent = new ExtentReports();
             extent.AttachReporter(htmlReporter);
         }

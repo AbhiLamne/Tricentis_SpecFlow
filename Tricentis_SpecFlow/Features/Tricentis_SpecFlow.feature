@@ -1,7 +1,7 @@
 ﻿Feature: Tricentis_SpecFlow
 	Open the Tricentis website and fill up the form for Camper
 
-@Chrome
+@tag1
 Scenario Outline: Open Tricentis website and fill up the form for Camper
 	Given I have navigated to the Tricentis website
 	When I clicked on Camper
@@ -20,7 +20,7 @@ Scenario Outline: Open Tricentis website and fill up the form for Camper
 	When I click on Next Button1
 	Then I see the Enter Insurance Data page is opened
 
-Scenario:  Fill-up the data for Enter Product Data page
+	
 	When I enter a data for First Name field as John
 	When I enter a data for Last Name field as Smith
 	When I select a date for Date of Birth field as 31 January 2003
