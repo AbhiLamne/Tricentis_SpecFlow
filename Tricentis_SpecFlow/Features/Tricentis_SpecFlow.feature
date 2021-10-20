@@ -20,7 +20,8 @@ Scenario Outline: Open Tricentis website and fill up the form for Camper
 	When I click on Next Button1
 	Then I see the Enter Insurance Data page is opened
 
-	
+Scenario Outline: Open Enter Insurance Data page and Fill-up the page
+	Given I opened the Tricentis website and navigated to Enter Insurance Data page
 	When I enter a data for First Name field as John
 	When I enter a data for Last Name field as Smith
 	When I select a date for Date of Birth field as 31 January 2003
@@ -36,6 +37,8 @@ Scenario Outline: Open Tricentis website and fill up the form for Camper
 	When I click on Next Button2
 	Then I see the Enter Product Data page is opened
 
+Scenario Outline: Open Enter Product Data page and Fill-up the page
+	Given I opened the Tricentis website and navigated to Enter Product Data page
 	When I select a date for Start Date field as 14 February 2023
 	When I select a data for Insurance Sum as 15000000
 	When I select a data for Damage Insurance as No Coverage
@@ -49,18 +52,22 @@ Scenario Outline: Open Tricentis website and fill up the form for Camper
 
 
 #Scenario Outline: Enter user details in Send Quote page
-	#When I enter data for user details as <Email>, <Phone>, <Username>, <Password> and <Confirm Password>
-	#When I enter a data for Comments field as Hello! Thank You!
-	#When I click on Next Button5
-	#Then I see Sending e-mail success
-	#Examples: 
-	#|	Email					|	Phone	|	Username	|	Password	|	Confirm Password	|
-	#|abhishek.lamne@Dataction.in|9988776655 |	abhi123		|	Abhi@123	|	Abhi@123			|
-
-
-	When I enter data for user details from table
-	| Email                       | Phone      | Username | Password | Confirm Password | Comments         |
-	| abhishek.lamne@Dataction.in | 9988776655 | abhi123  | Abhi@123 | Abhi@123         | Hello!Thank You! |
+	When I enter a data for E-Mail field as <Email>
+	When I enter a data for Phone field as <Phone>
+	When I enter a data for Username field as <Username>
+	When I enter a data for Password field as <Password>
+	When I enter a data for Confirm Password field as <Confirm Password>
+	When I enter a data for Comments field as <Comments>
 	When I click on Next Button5
 	Then I see Sending e-mail success
+	Examples: 
+	| Email                       | Phone      | Username | Password | Confirm Password | Comments          |
+	| abhishek.lamne@Dataction.in | 9988776655 | abhi123  | Abhi@123 | Abhi@123         | Hello! Thank You! |
+
+
+	#When I enter data for user details from table
+	#| Email                       | Phone      | Username | Password | Confirm Password | Comments         |
+	#| abhishek.lamne@Dataction.in | 9988776655 | abhi123  | Abhi@123 | Abhi@123         | Hello!Thank You! |
+	#When I click on Next Button5
+	#Then I see Sending e-mail success
 	

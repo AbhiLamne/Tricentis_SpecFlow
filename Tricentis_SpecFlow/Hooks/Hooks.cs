@@ -1,9 +1,12 @@
 ﻿using AventStack.ExtentReports;
+using AventStack.ExtentReports.Gherkin.Model;
 using AventStack.ExtentReports.Reporter;
 using BoDi;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using TechTalk.SpecFlow;
+using Tricentis_SpecFlow.Drivers;
 
 namespace Tricentis_SpecFlow.Hooks
 {
@@ -17,7 +20,7 @@ namespace Tricentis_SpecFlow.Hooks
         private static ExtentReports extent;
         private static ExtentTest featureName;
         private static ExtentTest scenario;
- 
+        private static ParallelConfig parallelconfig;
 
         public Hooks(IObjectContainer objectContainer)
         {
@@ -31,6 +34,9 @@ namespace Tricentis_SpecFlow.Hooks
             var htmlReporter = new ExtentHtmlReporter(@"C:\Users\Abhishek Lamne\source\repos\Tricentis\Tricentis_SpecFlow\Extent_Report\report.html");
             extent = new ExtentReports();
             extent.AttachReporter(htmlReporter);
+            extent.AddSystemInfo("Host", "Abhishek");
+            extent.AddSystemInfo("Environment", "QA");
+            
         }
 
 
@@ -51,25 +57,32 @@ namespace Tricentis_SpecFlow.Hooks
            
         }
 
+        public MediaEntityModelProvider CaptureScreenshot(string Name)
+        {
+            var screenshot = ((ITakesScreenshot)dr).GetScreenshot().AsBase64EncodedString;
+
+            return MediaEntityBuilder.CreateScreenCaptureFromBase64String(screenshot, Name).Build();
+
+        }
 
 
         [AfterStep]
         public void ReportingSteps(ScenarioContext context)
         {
-   
             if (context.TestError == null)
             {
-                scenario.Log(Status.Pass, context.StepContext.StepInfo.Text);
-                
+                scenario.Pass(context.StepContext.StepInfo.Text);
+
             }
             else if (context.TestError != null)
             {
-                scenario.Log(Status.Fail, context.StepContext.StepInfo.Text);             
+                var mediaEntity = CaptureScreenshot(context.ScenarioInfo.Title.Trim());
+                scenario.Fail(context.StepContext.StepInfo.Text, mediaEntity);             
             }
 
             if (context.ScenarioExecutionStatus.ToString() == "StepDefinationPending")
             {
-                scenario.Log(Status.Skip, context.StepContext.StepInfo.Text);
+                scenario.Skip(context.StepContext.StepInfo.Text);
             }
         }
 
@@ -77,7 +90,7 @@ namespace Tricentis_SpecFlow.Hooks
         [AfterScenario]
         public void AfterScenario()
         {
-           
+            dr.Quit();
         }
 
 
